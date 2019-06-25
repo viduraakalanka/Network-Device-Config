@@ -1,0 +1,5 @@
+1. configure terminal                              : to do configuration
+2. username <name> role  <role> password <user_pw> : set a new username 
+3. show running-config | include <phrase>          : check whether users are made properly  or not
+4. copy running-config startup-config              : save the  running configuration
+

@@ -1,0 +1,18 @@
+This describes how to configure VRP (R) software, Version 5.160 of the "HUAWEI S5320-36C-PWR-EI-AC" Huawei switch
+
+1. display interface description  : Look at the available  ports
+2. display vlan                   : Display the Vlan details. Please specifically check  which vlan the selected port belongs to
+3. system-view                    : Enter the configuration mode
+4. interface <port_name>          : Enter the port configuration mode
+5. port default vlan <vlan_ID>    : Set to which vlan the selected  ports belongs to (If it is assigned to another vlan, it  will be automatically remove that port from that vlan)
+
+	The default VLAN ID of an interface is called the port default VLAN ID (PVID). Frames processed in a switch all carry VLAN tags. When the switch 
+	receives an untagged frame, it adds a VLAN tag to the frame according to the default VLAN of the interface that receives the frame. 
+
+
+6. undo shutdown                  : Up the port
+7. description <port_description> : Change the port description.Port description can have spaces
+8. save                           : Save all the current configurations, including the configurations of the cards that are not running, to the current storage directory.
+
+
+pwd : Gives the current storage directory.

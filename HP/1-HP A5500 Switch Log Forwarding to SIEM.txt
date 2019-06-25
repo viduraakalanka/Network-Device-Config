@@ -1,0 +1,29 @@
+Outputting log information to a Linux log host
+
+Configuration procedure:
+
+1. Before the configuration, make sure that the device and the PC can reach each other.
+
+2. Configure the device:
+# Enable the information center.
+<Sysname> system-view
+[Sysname] info-center enable
+
+3. Specify the host 1.2.0.1/16 as the log host. Use the channel loghost to output log information
+(optional, loghost by default), and use local5 as the logging facility.
+[Sysname] info-center loghost 1.2.0.1 channel loghost facility local5
+
+4. Disable the output of log, trap, and debugging information of all modules on channel loghost.
+[Sysname] info-center source default channel loghost debug state off log state off
+trap state off
+To avoid outputting unnecessary information, disable the output of log, trap, and debugging
+information on the specified channel (loghost in this example) before you configure an output rule.
+
+5. Configure an output rule to output to the log host the log information that has a severity level of
+at least informational.
+[Sysname] info-center source default channel loghost log level informational state
+on
+
+Note: The logging facility name and the information level specified in the /etc/syslog.conf file must be
+identical to those configured on the device using the info-center loghost and info-center source
+commands. Otherwise the log information may not be output properly to the log host.

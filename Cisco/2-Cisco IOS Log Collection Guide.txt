@@ -1,0 +1,36 @@
+Configuring Cisco IOS to forward events 
+
+Procedure 
+
+1. Log in to your Cisco IOS Server, switch, or router. 
+2. Type the following command to log in to the router in privileged-exec: enable 
+3. Type the following command to switch to configuration mode: conf t 
+4. Type the following commands: 
+     logging <IP adddress>
+     logging source-interface <interface>
+     
+     Normally, a syslog message contains the IP address of the interface it uses to leave the networking device. 
+     Use the logging source-interface command to specify that syslog packets contain the IP address of a particular interface, regardless of which interface the packet uses to exit the networking device.
+
+     Where: 
+       •	<IP adddress> is the IP address of the LogRhythm. 
+       •	<interface> is the name of the interface, for example, dmz, lan, ethernet0, or ethernet1. 
+
+5. Type the following to configure the priority level: 
+      logging trap informational 
+	Use the logging trap command to limit the logging of messages sent to snmp servers to only those messages at the specified level.
+
+      logging console informational
+	Use the logging console command to prevent debugging messages from flooding your screen.
+
+        The logging console is for the console terminal. The value specified for the severity argument causes messages at that level and at numerically lower levels (higher severity levels) to be displayed on the console.
+ 
+6. Configure the syslog facility: logging facility syslog 
+	The logging facility command basically tells the syslog server where to put the log message. You configure the syslog server with something like:
+        local7.debug /var/adm/local7.log
+        Now, when you use the "logging facility local7" on your device, all messages with severity "debug" or greater should be saved in /var/adm/local7.log.
+
+7. Save and exit the file. 
+
+8. Copy the running-config to startup-config by typing the following command: 
+        copy running-config startup-config

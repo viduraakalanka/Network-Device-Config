@@ -1,0 +1,27 @@
+config firewall address
+    edit "<IPv4_Address_1>"
+        set subnet <IPv4_Address_1> <Subnet_Mask>
+    next
+    edit "<IPv4_Address_2>"
+        set subnet <IPv4_Address_2> <Subnet_Mask>
+    next
+    edit "<Domain_name_1>"
+        set type fqdn
+        set fqdn "<Domain_name_1>"
+    next
+    edit "<Domain_name_2>"
+        set type fqdn
+        set fqdn "<Domain_name_2>"
+    next
+end
+
+config firewall addrgrp
+edit "<Address_group_1>"
+        set member "<IPv4_Address_2>" "<IPv4_Address_2>"  "<Domain_name_1>"  "Domain_name_2" 
+    next
+end
+
+
+
+
+

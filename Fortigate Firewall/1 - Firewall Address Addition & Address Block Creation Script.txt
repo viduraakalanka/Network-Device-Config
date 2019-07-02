@@ -1,3 +1,7 @@
+config  vdom
+edit <VDOM_Name>
+
+#To add addresses to the Firewall VDOM
 config firewall address
     edit "<IPv4_Address_1>"
         set subnet <IPv4_Address_1> <Subnet_Mask>
@@ -15,9 +19,17 @@ config firewall address
     next
 end
 
+#To add new address block to the Firewall VDOM
 config firewall addrgrp
 edit "<Address_group_1>"
         set member "<IPv4_Address_2>" "<IPv4_Address_2>"  "<Domain_name_1>"  "Domain_name_2" 
+    next
+end
+
+#Apeend addresses to an existing address block
+config firewall addrgrp
+edit "<Address_group_1>"
+        append member "<IPv4_Address_2>" "<IPv4_Address_2>"  "<Domain_name_1>"  "Domain_name_2" 
     next
 end
 

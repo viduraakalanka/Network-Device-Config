@@ -9,8 +9,8 @@ Create a VLAN
 
 Add interfaces to vlan 
 1. configure terminal
-2. interface <interface id/range>
-3. switchport trunk allowed vlan add <vlan  id>
+2. interface <interface id/range>               : enter interface config submode
+3. switchport trunk allowed vlan add <vlan  id> : add the vlans allowed on that particular trunk
 4. exit
 5. copy running-config startup-config
 

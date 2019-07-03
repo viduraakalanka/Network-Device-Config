@@ -1,0 +1,18 @@
+Create a VLAN
+1. configure terminal  : Enter switch configuration mode
+2. vlan <id/range>     : Create a VLAN or enter configuration submode
+3. vlan name <Name>    : Set the VLAN name. This should be done in  the VLAN config submode
+4. state <state>       : Set VLAN state. This should be done in  the VLAN config submode States are  : active/suspend
+5. no shutdown         : Set shutdown
+6. exit                
+7. copy running-config starting-config
+
+Add interfaces to vlan 
+1. configure terminal
+2. interface <interface id/range>
+3. switchport trunk allowed vlan add <vlan  id>
+4. exit
+5. copy running-config startup-config
+
+
+

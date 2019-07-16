@@ -1,0 +1,2 @@
+1. system-view
+2. irf switch-to <no>

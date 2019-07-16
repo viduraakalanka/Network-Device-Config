@@ -1,0 +1,2 @@
+1. display interface description
+2. display current-config |  include route  : Display the default route  

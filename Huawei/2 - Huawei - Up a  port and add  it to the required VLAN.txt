@@ -1,4 +1,4 @@
-This describes how to configure VRP (R) software, Version 5.160 of the "HUAWEI S5320-36C-PWR-EI-AC" Huawei switch
+This describes how to configure VRP (R) software, Version 5.160 Huawei switch
 
 1. display interface description  : Look at the available  ports
 2. display vlan                   : Display the Vlan details. Please specifically check  which vlan the selected port belongs to

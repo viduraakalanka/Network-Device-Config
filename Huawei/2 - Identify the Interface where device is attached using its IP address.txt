@@ -1,3 +1,0 @@
-1. display arp all                     :  Identify the MAC address, attached interface related to a IP address of a device
-2. display interface Eth_trunk <no>    :  Identify physical ports related to an Ethernet-Trunk
-3. display mac-address <MAC>           :  Identify the attched interface using MAC address of a device

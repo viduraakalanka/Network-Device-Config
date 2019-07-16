@@ -1,0 +1,7 @@
+1. screen-length disable       : "More" command is disable. i.e. all the output from executing a command is displayed 
+2. display  current-config all : Display NW device  configuration including defaults
+3. display device manuinfo     : Obtain device serial number
+4. display irf                 : Display stacked device details
+
+
+

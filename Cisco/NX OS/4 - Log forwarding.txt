@@ -1,0 +1,9 @@
+Cisco recommends that you configure the syslog server to use the management virtual routing and forwarding (VRF) instance. For more information on VRFs, 
+see the Cisco Nexus 9000 Series NX-OS Unicast Routing Configuration Guide.
+
+1. configure terminal						: Enters global configuration mode.
+2. logging server <host_IP> <severity_level> use-vrf <VRF_name> : Configures a syslog server at the specified hostname or IPv4 or IPv6 address. You can limit logging
+								  of messages to a particular VRF by using the use-vrf keyword. Severity levels range from 0 to 7.
+3. logging source-interface loopback <virtual-interface>
+4. show logging server					        : Display current syslog server configuration
+5. copy running-config startup-config

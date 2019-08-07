@@ -1,0 +1,2 @@
+1. configure terminal
+2. no vlan <VLAN_ID>

@@ -1,2 +1,4 @@
 1. display interface description
-2. display current-config |  include route  : Display the default route  
+2. display current-config |  include route  : Display the default route 
+3. screen-length disable  <length> temporary     : Display all the output at  once
+   

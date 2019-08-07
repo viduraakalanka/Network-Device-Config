@@ -1,0 +1,2 @@
+1. tracert <destination_IP>  - provide traceroute
+2. ipconfig                  - Provide interface details

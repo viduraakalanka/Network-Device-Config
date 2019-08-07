@@ -1,3 +1,9 @@
 1. show interface status  - details of the connected devices to the ports are also shown
 2. show mac address-table - display the mac-address table in the switch
 3. show ip route          - display ip routing table
+4. traceroute <dest_IP>   - displays the route  taken for a particular destination. Switch IPs are not shown
+5. ping <dest_IP>         - check whether connectivity exist for a particular destination.
+6. terminal length 0      - print all the output  at once
+
+
+

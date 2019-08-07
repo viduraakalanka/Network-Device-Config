@@ -1,0 +1,31 @@
+Before Config
+1. show run | section/include tacacs
+2. show run | section/include aaa
+
+Create a Local user
+1. username <USER_NAME> privilege 15 secret <PW> 
+or
+2. username <USER_NAME> password  <PW>
+
+if you already entered an encrypted pw use the following
+1. username <USER_NAME> privilege 15 secret 5 <PW> 
+or
+2. username <USER_NAME> password 7 <PW>
+
+While Config
+1. aaa new-model                                         	      : enables AAA security  services
+2. tacacs-server host <HOST_IP> key <KEY>  			      : Specifies and defines the IP address of the server host before configuring the AAA server-group.
+								      : Specifying the encryption key with the tacacs-server host command overrides the default key set by the global configuration tacacs-server key command for this server only.
+3. aaa group server tacacs+ <GRP_NAME>		                      : Defines the AAA server-group with a group name. All members of a group must be the same type; that is, RADIUS or TACACS+. 
+	server <IP_Address_1>   	        	       	      : Associates a particular TACACS+ server with the defined server group.
+	server <IP_Address_2> 
+4. aaa authentication login default group <GRP1> group <GRP2> local   : This command defines the default method list. Incoming ASCII logins on all interfaces will use 
+				                                        TACACS+ for authentication. If no TACACS+ server responds, then the network access server will 
+							                use the information contained in the local username database for authentication.
+5. tacacs-server key <KEY>        			  	      : this command defines the shared encryption key to be <KEY>
+6. aaa accounting network default stop-only group <GRP1> group <GRP2> : this command configures network accounting via TACACS+. Here, accounting records describing 
+							    		the session that just terminated will be sent to the TACACS+ daemon whenever a network 
+							    		connection terminates
+
+
+Note : The TACACS+ host entries will be tried in the order in which they are configured.
